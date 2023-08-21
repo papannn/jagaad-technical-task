@@ -1,6 +1,9 @@
 package main
 
-import "github.com/spf13/cobra"
+import (
+	"github.com/spf13/cobra"
+	"jagaat-technical-task/cmd/config"
+)
 
 var rootCmd = &cobra.Command{
 	Long: `
@@ -10,4 +13,8 @@ var rootCmd = &cobra.Command{
 
 func main() {
 	rootCmd.Execute()
+}
+
+func init() {
+	config.InitializeConfig()
 }
