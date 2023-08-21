@@ -17,7 +17,7 @@ var (
 
 func InitializeConfig() {
 	currentDir, _ := os.Getwd()
-	jsonConfig, err := os.Open(fmt.Sprintf("%s%s", currentDir, "/cmd/config/config.json"))
+	jsonConfig, err := os.Open(fmt.Sprintf("%s%s", currentDir, "/config/config.json"))
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("error opening json file")
