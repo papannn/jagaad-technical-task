@@ -9,8 +9,9 @@ var (
 )
 
 var Command = &cobra.Command{
-	Long: `Search users from CSV`,
-	Use:  "search_user_data",
+	Short: "Search user data on csv and print the filtered result using --tags flag",
+	Long:  `Search user data on csv and print the filtered result using --tags flag`,
+	Use:   "read_and_search",
 	Run: func(cmd *cobra.Command, args []string) {
 		logicImpl.ReadAndSearch(tagSearch)
 	},
