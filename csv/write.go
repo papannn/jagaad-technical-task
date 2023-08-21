@@ -10,8 +10,14 @@ import (
 	"strings"
 )
 
+var (
+	Create    = os.Create
+	NewWriter = csv.NewWriter
+	Marshal   = json.Marshal
+)
+
 func (l *LogicImpl) Write(userArr []dto.User) error {
-	csvFile, err := os.Create("result.csv")
+	csvFile, err := Create("result.csv")
 	if err != nil {
 		log.Println(err)
 		log.Println("error creating csv file")
@@ -20,7 +26,7 @@ func (l *LogicImpl) Write(userArr []dto.User) error {
 
 	writeAbleData := l.getWriteableData(userArr)
 
-	w := csv.NewWriter(csvFile)
+	w := NewWriter(csvFile)
 	err = w.WriteAll(writeAbleData)
 	if err != nil {
 		log.Println(err)
@@ -60,7 +66,7 @@ func (l *LogicImpl) transformUserObjToArrString(user dto.User) ([]string, error)
 		isActive = 1
 	}
 
-	friendJsonByte, err := json.Marshal(user.Friends)
+	friendJsonByte, err := Marshal(user.Friends)
 	if err != nil {
 		log.Println(err)
 		log.Printf("error marshalling friend value %+v, skipped\n", user.Friends)
