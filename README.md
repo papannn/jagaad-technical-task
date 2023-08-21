@@ -41,4 +41,4 @@ It will read the csv data and will filter the data by cli flag `--tags`, not put
 
 # Time spent
 
-The time I spent to develop the core logic for this assignment is around 90 mins, I finished the core logic on this [commit message](https://github.com/papannn/jagaat-technical-task/commit/d6a5491c7e8e69040768a9a09784311d115036c8), after that I slow down my pace and start to refactor my code and writing unit test so the reviewer can easily review the code than before. 
+The time I spent to develop the core logic for this assignment is around 90 mins, I finished the core logic on this [commit message](https://github.com/papannn/jagaat-technical-task/commit/d6a5491c7e8e69040768a9a09784311d115036c8), after that I slow down my pace and start to refactor my code, doing bug fixing and writing unit test so the reviewer can easily review the code than before. 
