@@ -98,6 +98,7 @@ func (r *ReadAndSearchLogicImpl) createUserDTO(data []string) (dto.User, error) 
 }
 
 func (r *ReadAndSearchLogicImpl) printResultArr(result []dto.User) {
+	log.Printf("You got %d results\n", len(result))
 	for _, data := range result {
 		jsonData, err := Marshal(data)
 		if err != nil {
