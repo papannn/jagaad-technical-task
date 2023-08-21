@@ -50,7 +50,7 @@ var Command = &cobra.Command{
 			var data [][]string
 
 			header := []string{
-				"ID", "Index", "GUID", "IsActive", "Tags", "Friend",
+				"ID", "Index", "GUID", "IsActive", "Balance", "Tags", "Friend",
 			}
 			data = append(data, header)
 
@@ -70,6 +70,7 @@ var Command = &cobra.Command{
 					strconv.Itoa(user.Index),
 					user.GUID,
 					strconv.Itoa(isActive),
+					user.Balance,
 					strings.Join(user.Tags, "|"),
 					string(friendByte),
 				}
