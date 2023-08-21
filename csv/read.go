@@ -6,8 +6,12 @@ import (
 	"os"
 )
 
+var (
+	Stat = os.Stat
+)
+
 func (l *LogicImpl) Read() ([][]string, error) {
-	_, err := os.Stat("result.csv")
+	_, err := Stat("result.csv")
 	if err != nil {
 		log.Println(err)
 		log.Println("you need to fetch the data first before searching the user")
