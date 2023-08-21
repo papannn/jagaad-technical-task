@@ -26,9 +26,10 @@ var Command = &cobra.Command{
 			}
 
 			if resp.StatusCode != http.StatusOK {
-				fmt.Println("error fetching API")
+				fmt.Println("error fetching API from URL:", url, "skipped")
 				continue
 			}
+			fmt.Println("Success fetching API from URL:", url)
 
 			respByte, err := io.ReadAll(resp.Body)
 			if err != nil {
@@ -77,6 +78,8 @@ var Command = &cobra.Command{
 				data = append(data, row)
 			}
 			w.WriteAll(data)
+
+			fmt.Println("Finished fetching data, saved on result.csv")
 		}
 	},
 }
