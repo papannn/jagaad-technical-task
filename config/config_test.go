@@ -68,8 +68,8 @@ func TestInitializeConfig(t *testing.T) {
 				assert.NoError(t, err)
 			}
 		})
+		resetMock()
 	}
-	resetMock()
 }
 
 func resetMock() {
