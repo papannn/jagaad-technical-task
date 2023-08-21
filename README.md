@@ -1,6 +1,8 @@
 
 # Jagaad Technical Interview Assignment
 
+I'm using golang version `1.21.0`
+
 Library that I used:
 * [Cobra](https://github.com/spf13/cobra) for easier making CLI app
 * [Testify](https://github.com/stretchr/testify) for easier making unit test
